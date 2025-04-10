@@ -10,6 +10,7 @@ def plot_heatmap(
     total_score=None,
     grid_steps=4,
     fontsize=None,
+    fax = None
 ):
     """Plot heatmap; this is adapted from https://git.tu-berlin.de/gmontavon/lrp-tutorial/-/blob/main/utils.py
 
@@ -18,6 +19,12 @@ def plot_heatmap(
         reference_heatmap (np.array(h, w), optional): used for calculating normalization values. Defaults to None.
         total_score (float, optional): used for normalizing scores. Defaults to None.
     """
+
+    if fax is None:
+        f, ax = plt.subplots(1,1)
+    else:
+        f, ax = fax 
+    
     assert len(heatmap.shape) == 2
 
     if reference_heatmap is None:
@@ -33,6 +40,6 @@ def plot_heatmap(
 
     sum_Ri = np.sum(heatmap)
 
-    plt.xticks([])
-    plt.yticks([])
-    plt.imshow(heatmap, cmap=my_cmap, vmin=-b, vmax=b)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.imshow(heatmap, cmap=my_cmap, vmin=-b, vmax=b)

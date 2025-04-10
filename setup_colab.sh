@@ -1,6 +1,9 @@
 #!/bin/bash
 
 pip install zennit
+pip install captum
+pip install sklearn
+
 
 git clone https://github.com/hassanhajj910/prompt-me-a-dataset.git 
 
