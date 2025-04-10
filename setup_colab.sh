@@ -22,6 +22,7 @@ pip install groundingdino-py
 
 # Get Data
 
-echo "$PWD"
+
+cd /content
 
 wget https://tubcloud.tu-berlin.de/s/ZCr7YxqyBX598cY/download/1808_clavius_sphaera_1585.zip && unzip 1808_clavius_sphaera_1585.zip  && rm -rf __MACOSX/ && rm 1808_clavius_sphaera_1585.zip
